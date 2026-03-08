@@ -14,7 +14,7 @@ public class StandardDeck implements Deck {
     }
 
     @Override
-    public Card deal() {
+    public Card draw() {
         return null;
     }
 
