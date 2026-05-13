@@ -15,25 +15,18 @@ public class StandardDeck implements Deck {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("StandardDeck {");
-        sb.append(cards);
-        sb.append('}');
-        return sb.toString();
+        return "StandardDeck {" + cards + '}';
     }
 
     private List<Card> newDeck() {
 
         List<Card> cards = new ArrayList<>();
 
-        Arrays.stream(Suit.values()).forEach(suit -> {
+        Arrays.stream(Suit.values()).forEach(suit ->
             Arrays.stream(FaceValue.values())
                     .map(faceValue -> new Card(suit, faceValue))
-                    .forEach(cards::add);
-        });
-        return cards;
-    }
-
-    public List<Card> getCards() {
+                    .forEach(cards::add)
+        );
         return cards;
     }
 
@@ -55,7 +48,7 @@ public class StandardDeck implements Deck {
     }
 
     @Override
-    public Card deal() {
+    public Card draw() {
         return this.cards.removeFirst();
     }
 

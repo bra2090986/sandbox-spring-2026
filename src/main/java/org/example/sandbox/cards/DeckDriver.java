@@ -13,7 +13,7 @@ public class DeckDriver {
         cards.shuffle();
         displayDeck(cards);
 
-        Card card = cards.deal();
+        Card card = cards.draw();
         System.out.print("\nTop card dealt: ");
         System.out.println(card);
         displayDeck(cards);
